@@ -1,0 +1,16 @@
+extends layout
+
+block layout-content
+    .view.user-view
+        h1.banner Howdy, #{userProfile.nickname}!
+        .message
+            .title
+                h3 some h3 header
+                h1 some content h1
+            pre.details=JSON.stringify(userProfile, null, 2)
+        .nav-buttons
+            a(href='/logout')
+                .nav-button log out
+
+    script.
+        alert('howdy')
