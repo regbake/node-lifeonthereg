@@ -11,15 +11,20 @@ app.set('view engine', 'pug');
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', (req, res) => {
-    res.render('index', { title: 'Home' })
+    res.render('index', {
+        data: 'sample data'
+    });
 });
 
-app.get('/home', (req, res) => {
-    const test = 'test from index.js';
-    res.render('converted_from_html_lifeonreg_index', {
-        test
-    })
+app.get('/test', (req, res) => {
+    res.render('test', {
+        data: 'test data'
+    });
 });
+
+app.get('/portfolio', (req, res) => {
+    res.render('portfolio', {})
+})
 
 app.get('/user', (req, res) => {
     res.render("user", {
