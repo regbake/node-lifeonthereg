@@ -16,9 +16,17 @@ app.get('/', (req, res) => {
     });
 });
 
-app.get('/test', (req, res) => {
-    res.render('test', {
-        data: 'test data'
+app.get('/sassy', (req, res) => {
+  res.render('sassy/sassy', {
+    data: {
+      greeting: 'hello there'
+    }
+  })
+});
+
+app.get('/test_index', (req, res) => {
+    res.render('test_index', {
+        data: 'sample data'
     });
 });
 

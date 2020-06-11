@@ -16,9 +16,12 @@ html
       html,body {
       font-family: 'Open Sans';
       }
+      .navbar {
+        background-color: aqua
+      }
 
   body
-    include partial_head.pug
+    include partials/partial_head.pug
 
     section.hero.is-fullheight.is-default.is-bold
       #header
@@ -28,11 +31,11 @@ html
             .column.is-5
               #slider
                 figure
-                  img(src='https://farm1.staticflickr.com/141/326714287_d219b27e9e_o.jpg' alt='awesome photo')
+                  //- img(src='https://farm1.staticflickr.com/141/326714287_d219b27e9e_o.jpg' alt='awesome photo')
                   img(src='https://i.imgur.com/ajPe2Bl.jpg' alt='awesome photo')
                   img(src='https://i.imgur.com/dDKgXS2h.jpg' alt='awesome photo')
                   img(src='https://i.imgur.com/KEFUlu0h.jpg' alt='awesome photo')
-                  img(src='https://i.imgur.com/42k7aAs.jpg' alt='awesome photo')
+                  //- img(src='https://i.imgur.com/42k7aAs.jpg' alt='awesome photo')
             .column.is-6.is-offset-1
               h1.title.is-2
                 | Howdy, my name is Reggie.
@@ -43,6 +46,9 @@ html
               p.has-text-centered
                 a.button.is-medium.is-info.is-outlined(href='about.html')
                   | Contact Me
-      #footer
+
+    include partials/partial_foot.pug
+
+    //- bulma.js exist?
     script(async='' type='text/javascript' src='../js/bulma.js')
     script(type='text/javascript' src='script.js')
