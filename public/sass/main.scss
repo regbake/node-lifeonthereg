@@ -1,5 +1,6 @@
 /* main.scss */
 $color-white: white;
+$color-creme: rgb(245, 228, 218);
 $color-red: rgba(247, 60, 43, 1);
 $color-red-light: rgb(243, 84, 70);
 
@@ -22,7 +23,8 @@ html {
 }
 
 body {
-  background-color: $color-white;
+  background-color: $color-creme;
+
   padding: 3rem;
   box-sizing: border-box;
 }
@@ -33,10 +35,6 @@ body {
   opacity: 1;
   position: relative;
   z-index: 1;
-
-  & .test:hover {
-    animation-play-state: paused;
-  }
 
   &__bio {
     position: absolute;
@@ -49,6 +47,15 @@ body {
     color: rgba(254, 254, 223, 1);
     font-family: 'Montserrat', sans-serif;
 
+    &:hover {
+      cursor: default;
+    }
+
+    &:hover + .slider {
+      filter: brightness(90%);
+      border: solid rgb(238, 74, 183) 3px;
+      animation-play-state: paused;
+    }
   }
 
   & .slider {
@@ -59,7 +66,6 @@ body {
     display: flex;
     overflow-y: hidden;
     overflow-x: scroll;
-    // box-shadow: 0 5rem 15rem rgba($color-black,.6);
     background-color: black;
     box-sizing: border-box;
 
@@ -68,21 +74,12 @@ body {
     &:hover {
       filter: brightness(90%);
       border: solid rgb(238, 74, 183) 3px;
-
-      // animation-play-state: paused;
+      animation-play-state: paused;
     }
-
-    // &:hover ~ .header__bio {
-    //   color: blue;
-    // }
 
     &--photo {
       height: 100%;
       overflow: scroll;
-
-      // animation: slide 12s infinite;
-
-      // shows extra "margin" to right
 
       &:last-child {
         margin-right: 1rem;
@@ -96,23 +93,24 @@ body {
   }
 }
 
-
-
 .card {
   height: 84vh;
   width: 92vw;
-  background-color: $color-blue-light;
-  transform: translateY(10rem);
+  background-image: linear-gradient(
+    to right,
+    cornflowerblue,
+    violet
+  );
+  border-radius: .5rem;
+  box-shadow: .5rem .5rem .5rem .5rem rgba($color-black,.3);
+  transform: translateY(10rem); // handle vertical spacing
   margin: 0 auto 12.5rem;
-  font-size: 8rem;
-  line-height: 10rem;
+  font-size: 5rem;
+  line-height: 7rem;
   text-align: center;
 
   & .card__text--container {
-    // display: inline-block;
-    // vertical-align: middle;
     transform: translateY(25rem);
-
   }
 
 }
@@ -124,7 +122,7 @@ body {
   }
 
   40% {
-    box-shadow: 0 2rem 11rem rgba($color-black,.6);
+    box-shadow: 0 2rem 11rem rgba($color-black,.4);
     transform: translateY(0) translateX(0);
   }
 
@@ -134,7 +132,7 @@ body {
   }
 
   80% {
-    box-shadow: 0 2rem 11rem rgba($color-black,.6);
+    box-shadow: 0 2rem 11rem rgba($color-black,.4);
     transform: translateY(0) translateX(0);
   }
 

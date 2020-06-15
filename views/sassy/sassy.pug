@@ -11,24 +11,29 @@ html
     script(src='https://code.jquery.com/jquery-3.5.1.slim.min.js' integrity='sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=' crossorigin='anonymous')
   body
     header.header
-      //- .header__bio.test
-      //-     p
-      //-       | assorted web goodies
-      .slider.test
+      .header__bio
+          p
+            | assorted web goodies
+      .slider
         figure
-          img.slider--photo(src='https://i.imgur.com/ajPe2Bl.jpg' alt='awesome photo 1')
+          img.slider--photo(src='https://i.imgur.com/ajPe2Bl.jpg' alt='oakland at sunset')
         figure
-          img.slider--photo#test(src='https://i.imgur.com/dDKgXS2h.jpg' alt='awesome photo 2')
+          img.slider--photo#test(src='https://i.imgur.com/dDKgXS2h.jpg' alt='abandoned building with fish-eye')
         figure
-          img.slider--photo(src='https://i.imgur.com/KEFUlu0h.jpg' alt='awesome photo 3')
+          img.slider--photo(src='https://i.imgur.com/KEFUlu0h.jpg' alt='sunset from window')
 
     .card
       .card__text--container
-        | Mostly coding, some other things too
+        p.card__text
+          | Mostly coding, with other things too
+
+        p.card__text
+          | This is me and some more text in a p tag
 
     .card
       .card__text--container
-        | howdy
+        p.card__text
+          | howdy
 
     script.
       const slider = $('.slider');

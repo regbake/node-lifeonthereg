@@ -16,6 +16,10 @@ app.get('/', (req, res) => {
     });
 });
 
+/*
+  Maybe it would be cool to split things up into an /at-play and an /at-work route
+*/
+
 app.get('/sassy', (req, res) => {
   res.render('sassy/sassy', {
     data: {
