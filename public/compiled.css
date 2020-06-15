@@ -18,6 +18,8 @@ body {
   opacity: 1;
   position: relative;
   z-index: 1; }
+  .header .test:hover {
+    animation-play-state: paused; }
   .header__bio {
     position: absolute;
     top: 10rem;
@@ -25,7 +27,8 @@ body {
     text-align: center;
     z-index: 10;
     font-size: 3rem;
-    color: white; }
+    color: #fefedf;
+    font-family: 'Montserrat', sans-serif; }
   .header .slider {
     height: 100%;
     width: 70%;
@@ -58,7 +61,7 @@ body {
   font-size: 8rem;
   line-height: 10rem;
   text-align: center; }
-  .card .card__text-container {
+  .card .card__text--container {
     transform: translateY(25rem); }
 
 @keyframes beat {

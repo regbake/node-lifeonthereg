@@ -5,13 +5,16 @@ html
     meta(name="viewport" content="width=device-width, initial-scale=1")
     title It ain't easy being sassy
 
+    link(href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet")
     link(rel="stylesheet" type="text/css" href="compiled.css")
+
+    script(src='https://code.jquery.com/jquery-3.5.1.slim.min.js' integrity='sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=' crossorigin='anonymous')
   body
     header.header
-      .header__bio
-          p
-            | Some code, and other things
-      .slider
+      //- .header__bio.test
+      //-     p
+      //-       | assorted web goodies
+      .slider.test
         figure
           img.slider--photo(src='https://i.imgur.com/ajPe2Bl.jpg' alt='awesome photo 1')
         figure
@@ -20,15 +23,28 @@ html
           img.slider--photo(src='https://i.imgur.com/KEFUlu0h.jpg' alt='awesome photo 3')
 
     .card
-      .card__text-container
-        | Mostly coding, but other things too
+      .card__text--container
+        | Mostly coding, some other things too
 
     .card
-      .card__text-container
+      .card__text--container
         | howdy
 
+    script.
+      const slider = $('.slider');
+      const header__bio = $('.header__bio');
 
 
+      slider.mouseover(()=>{
+        $('.header__bio').css('opacity', '0')
+      });
+      slider.mouseout(()=>{
+        $('.header__bio').css('opacity', '1')
+      });
 
-
-
+      header__bio.mouseover(()=>{
+        $('.header__bio').css('opacity', '0')
+      });
+      header__bio.mouseout(()=>{
+        $('.header__bio').css('opacity', '1')
+      });

@@ -21,7 +21,11 @@ app.get('/sassy', (req, res) => {
     data: {
       greeting: 'hello there'
     }
-  })
+  });
+});
+
+app.get('/job', (req, res) => {
+  res.render('sassy/job');
 });
 
 app.get('/test_index', (req, res) => {

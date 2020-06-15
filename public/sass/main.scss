@@ -34,6 +34,10 @@ body {
   position: relative;
   z-index: 1;
 
+  & .test:hover {
+    animation-play-state: paused;
+  }
+
   &__bio {
     position: absolute;
     top: 10rem;
@@ -42,7 +46,8 @@ body {
     z-index: 10;
 
     font-size: 3rem;
-    color: white;
+    color: rgba(254, 254, 223, 1);
+    font-family: 'Montserrat', sans-serif;
 
   }
 
@@ -63,8 +68,13 @@ body {
     &:hover {
       filter: brightness(90%);
       border: solid rgb(238, 74, 183) 3px;
-      // transform: translateY(5px) translateX(5px);
+
+      // animation-play-state: paused;
     }
+
+    // &:hover ~ .header__bio {
+    //   color: blue;
+    // }
 
     &--photo {
       height: 100%;
@@ -98,7 +108,7 @@ body {
   line-height: 10rem;
   text-align: center;
 
-  & .card__text-container {
+  & .card__text--container {
     // display: inline-block;
     // vertical-align: middle;
     transform: translateY(25rem);
