@@ -43,11 +43,16 @@ body {
     overflow-x: scroll;
     background-color: black;
     box-sizing: border-box;
+    z-index: 5;
     animation: beat 3s infinite; }
     .header .slider:hover {
       filter: brightness(90%);
       border: solid #ee4ab7 3px;
       animation-play-state: paused; }
+    .header .slider:hover ~ .arrow__container {
+      opacity: 1;
+      animation: beat-secondary 2s ease infinite;
+      animation-iteration-count: 2; }
     .header .slider--photo {
       height: 100%;
       overflow: scroll; }
@@ -56,11 +61,22 @@ body {
       .header .slider--photo#test {
         margin-left: -8rem;
         margin-right: -7rem; }
+  .header .arrow__container {
+    color: white;
+    font-size: 5rem;
+    z-index: 100;
+    opacity: 0;
+    transition: .2s; }
+    .header .arrow__container:hover {
+      animation-play-state: paused;
+      display: none;
+      opacity: 0; }
 
 .card {
   height: 84vh;
   width: 92vw;
-  background-image: linear-gradient(to right, cornflowerblue, violet);
+  background-image: linear-gradient(to bottom, #3c71aa, #cf3128);
+  opacity: .8;
   border-radius: .5rem;
   box-shadow: 0.5rem 0.5rem 0.5rem 0.5rem rgba(0, 0, 0, 0.3);
   transform: translateY(10rem);
@@ -69,7 +85,32 @@ body {
   line-height: 7rem;
   text-align: center; }
   .card .card__text--container {
-    transform: translateY(25rem); }
+    transform: translateY(-2rem);
+    color: #f5e4da; }
+
+.about__photo {
+  opacity: 1;
+  transform: translateX(10rem);
+  scale: .7; }
+  .about__photo--side-head {
+    clip-path: ellipse(20rem 45rem at 35% 47%); }
+
+@keyframes beat-secondary {
+  0% {
+    transform: translateX(97rem) translateY(-10rem);
+    opacity: .6; }
+  25% {
+    transform: translateX(100rem) translateY(-10rem);
+    opacity: 1; }
+  50% {
+    transform: translateX(97rem) translateY(-10rem);
+    opacity: .6; }
+  75% {
+    transform: translateX(100rem) translateY(-10rem);
+    opacity: 1; }
+  100% {
+    transform: translateX(97rem) translateY(-10rem);
+    opacity: .6; } }
 
 @keyframes beat {
   0% {
