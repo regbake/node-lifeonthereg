@@ -88,12 +88,36 @@ body {
     transform: translateY(-2rem);
     color: #f5e4da; }
 
-.about__photo {
-  opacity: 1;
-  transform: translateX(10rem);
-  scale: .7; }
-  .about__photo--side-head {
-    clip-path: ellipse(20rem 45rem at 35% 47%); }
+.about {
+  background-image: url(../img/mast-sunset.jpg);
+  background-size: cover; }
+  .about__photo {
+    opacity: .85;
+    transform: translateX(10rem);
+    scale: .9; }
+    .about__photo--side-head {
+      clip-path: ellipse(20rem 45rem at 35% 47%); }
+
+.samples .card__text {
+  transform: translateY(2rem); }
+
+.samples__gallery--container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between; }
+
+.samples__gallery--item {
+  height: 24rem;
+  width: 65rem;
+  border: solid black 2px;
+  z-index: 20; }
+
+.samples__gallery--photo-1 {
+  background-image: url(https://i.imgur.com/EfMhxn7.jpg);
+  background-size: cover; }
 
 @keyframes beat-secondary {
   0% {
