@@ -9,12 +9,17 @@ app.listen(port, () => console.log(`Listening on http://localhost:${port}`));
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 app.use(express.static(path.join(__dirname, 'public')));
+app.use('/img', express.static('img'));
 
 app.get('/', (req, res) => {
     res.render('index', {
         data: 'sample data'
     });
 });
+
+/*
+  Maybe it would be cool to split things up into an /at-play and an /at-work route
+*/
 
 app.get('/sassy', (req, res) => {
   res.render('sassy/sassy', {
