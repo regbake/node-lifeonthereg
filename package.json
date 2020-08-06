@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "nodemon ./index.js",
     "watch:sass": "node-sass public/sass/main.scss public/compiled.css -w",
-    "test": "jest"
+    "test": "jest --detectOpenHandles",
+    "watch:test": "jest --detectOpenHandles --watch"
   },
   "keywords": [],
   "author": "Reginaldo",
