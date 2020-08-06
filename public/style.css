@@ -29,7 +29,7 @@ body {
   }
 
   #axxess {
-    width: ;
+    width: auto;
     height: 30%;
     margin: 0 auto;
     border: solid 2px red;
@@ -113,6 +113,10 @@ body {
   .portfolio-item {
     width: 80%;
     margin: 0 auto;
+  }
+
+  .portfolio-item > .column {
+    display: inline-block;
   }
 
   p:hover span {
