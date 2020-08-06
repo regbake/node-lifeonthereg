@@ -12,6 +12,9 @@ body {
   padding: 3rem;
   box-sizing: border-box; }
 
+.navbar {
+  background-color: aqua; }
+
 .header {
   height: 92vh;
   border-radius: 1em;
