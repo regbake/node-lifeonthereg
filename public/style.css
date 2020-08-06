@@ -3,6 +3,10 @@ body {
     background: violet;
   }
 
+.navbar {
+  background-color: aqua;
+}
+
   #what-is {
     position: relative;
     margin-top: 2%;
