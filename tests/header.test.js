@@ -10,24 +10,15 @@ beforeEach(async () => {
   await page.goto('localhost:8000');
 });
 
+// @TODO: Why no workey? Broswer stays open
 // afterEach(async () => {
 //   await browser.close();
 // });
 
-xtest('Header has correct text', async () => {
-  try {
-    const text = await page.$eval('#holla', el => el.innerHTML);
+test('Header has correct text', async () => {
+  const text = await page.$eval('#holla', el => el.innerHTML);
 
-    expect(text).toEqual('Master of my domain.');
-
-  } catch(error) {
-    console.error(error);
-
-    console.log('There was an error and the browser will be closed.');
-    await browser.close();
-  }
-
-  console.log('Browser closed after successful test.');
+  expect(text).toEqual('Master of my domain.');
   await browser.close();
 });
 
@@ -46,7 +37,6 @@ test('Click on burger', async () => {
   });
 
   await page.click('#nav-toggle');
-
   await page.waitForSelector('#navbarMenu', {
     visible: false
   });

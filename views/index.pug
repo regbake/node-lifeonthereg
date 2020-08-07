@@ -14,10 +14,7 @@ html
     script(src='https://code.jquery.com/jquery-3.5.1.slim.min.js' integrity='sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=' crossorigin='anonymous')
     link(rel='stylesheet' type='text/css' href='style.css')
 
-    style.
-      #nav-toggle {
-        background-color: pink;
-      }
+
 
   body
     include partials/partial_head.pug
@@ -48,11 +45,8 @@ html
 
     include partials/partial_foot.pug
 
-    //- bulma.js exist?
-    script(async='' type='text/javascript' src='../js/bulma.js')
     script(type='text/javascript' src='script.js')
     script.
-      var toggle = $("#nav-toggle");
-      toggle.click(function() {
+      $("#nav-toggle").click(function() {
         $('#navbarMenu').toggle();
       });
