@@ -1,24 +1,25 @@
 const puppeteer = require('puppeteer');
+let browser;
+let page;
 
-test('Adds two numbers', () => {
-  const sum = 1 + 2;
-  expect(sum).toEqual(3);
-});
-
-test('We can launch a browser', async () => {
-  const browser = await puppeteer.launch({
+beforeEach(async () => {
+  browser = await puppeteer.launch({
     headless: false
   });
-  const page = await browser.newPage();
+  page = await browser.newPage();
+  await page.goto('localhost:8000');
+});
 
+// afterEach(async () => {
+//   await browser.close();
+// });
+
+xtest('Header has correct text', async () => {
   try {
-    // await page.waitForSelector('#holla');
-    await page.goto('localhost:8000');
     const text = await page.$eval('#holla', el => el.innerHTML);
 
     expect(text).toEqual('Master of my domain.');
 
-    console.log('Good stuff')
   } catch(error) {
     console.error(error);
 
@@ -27,5 +28,28 @@ test('We can launch a browser', async () => {
   }
 
   console.log('Browser closed after successful test.');
+  await browser.close();
+});
+
+test('Click on burger', async () => {
+  // click on nav-toggle
+  // navbarMenu should appear
+  // click on nav-toggle again
+  // navbarMenu should disappear
+
+  // set viewport so burger-menu shows
+  await page.setViewport({ width: 500, height: 800 });
+  await page.click('#nav-toggle');
+
+  await page.waitForSelector('#navbarMenu', {
+    visible: true
+  });
+
+  await page.click('#nav-toggle');
+
+  await page.waitForSelector('#navbarMenu', {
+    visible: false
+  });
+
   await browser.close();
 });
