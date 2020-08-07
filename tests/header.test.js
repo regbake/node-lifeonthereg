@@ -19,6 +19,7 @@ test('Header has correct text', async () => {
   const text = await page.$eval('#holla', el => el.innerHTML);
 
   expect(text).toEqual('Master of my domain.');
+
   await browser.close();
 });
 
@@ -37,6 +38,7 @@ test('Click on burger', async () => {
   });
 
   await page.click('#nav-toggle');
+
   await page.waitForSelector('#navbarMenu', {
     visible: false
   });
